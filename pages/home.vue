@@ -11,12 +11,9 @@
 
         ></v-carousel-item>
       </v-carousel>
-
-      <div
-
-      
-       class="hoy"
+     
        
+      <div>
         <v-btn class="septiembre" fab dark large>
           <v-icon dark>
             add_circle
@@ -32,7 +29,7 @@
         
   
         </v-btn>
-      
+      </div>
   </div>
     
 </template>
@@ -68,19 +65,12 @@
   <style>
 .septiembre{
   margin-top: 10px;
-    margin-left: -170px;
     background-color: green !important;
 }
 .octubre{
-  margin-top: 10px;
-    margin-left: -170px;
+  margin-left: 90%;
     background-color: red !important;
 }
-
-.hoy{
-
-}
-
 
 
   </style>

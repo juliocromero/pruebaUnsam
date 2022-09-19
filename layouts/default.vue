@@ -1,5 +1,6 @@
 <template>
   <v-app dark>
+    <!-- desde aca arranca el navbar -->
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -24,6 +25,8 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+    <!-- aca termina el navbar -->
+    <!-- aca comienza el siderbar -->
     <v-app-bar
       :clipped-left="clipped"
       fixed
@@ -50,45 +53,22 @@
       </v-btn>
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
+      <div>
+      <!-- aca el icono de usuario -->
+    </div>
     </v-app-bar>
+    <!-- aca termina el siderbar -->
     <v-main>
       <v-container>
         <Nuxt />
       </v-container>
     </v-main>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer
-      :absolute="!fixed"
-      app
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    
   </v-app>
 </template>
 
 <script>
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 export default {
   name: 'DefaultLayout',
   data () {
