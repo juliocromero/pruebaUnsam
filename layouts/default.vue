@@ -31,32 +31,17 @@
       :clipped-left="clipped"
       fixed
       app
+      color="#5d95c9"
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
+      <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer" />
       <v-spacer />
       <div>
       <!-- aca el icono de usuario -->
+      <InputSelect />
     </div>
+    
     </v-app-bar>
+    
     <!-- aca termina el siderbar -->
     <v-main>
       <v-container>
@@ -69,36 +54,37 @@
 
 <script>
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
+import InputSelect from '../components/Select/inputSelect.vue';
 export default {
-  name: 'DefaultLayout',
-  data () {
-    return {
-      clipped: true,
-      drawer: true,
-      fixed: true,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        },
-        {
-          icon: 'home_work',
-          title: 'home',
-          to: '/home'
-          
-        },
-      ],
-      miniVariant: false,
-      right:false,
-      rightDrawer: false,
-      title: 'Vuetify.js'
-    }
-  }
+    name: "DefaultLayout",
+    data() {
+        return {
+            clipped: true,
+            drawer: true,
+            fixed: true,
+            items: [
+                {
+                    icon: "mdi-apps",
+                    title: "Welcome",
+                    to: "/"
+                },
+                {
+                    icon: "mdi-chart-bubble",
+                    title: "Inspire",
+                    to: "/inspire"
+                },
+                {
+                    icon: "home_work",
+                    title: "home",
+                    to: "/home"
+                },
+            ],
+            miniVariant: false,
+            right: false,
+            rightDrawer: false,
+            title: "Vuetify.js"
+        };
+    },
+    components: { InputSelect }
 }
 </script>
